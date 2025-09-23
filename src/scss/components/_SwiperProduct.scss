@@ -1,0 +1,22 @@
+// 如果元件化上製作困難就放在一起
+
+.home-product {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 80%;
+        margin: 20px 0 auto;
+        height: 80vh;
+
+        .home-circle {
+            position: relative;
+            max-width: 80%;
+        }
+
+        .home-web {
+            width: 120%;
+            position: absolute;
+            top: -5%;
+            left: -10%;
+        }
+    }

@@ -1,0 +1,99 @@
+@use '../variables/' as *;
+
+.footer-wrap {
+    background-color: #282828;
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+    width: 100%;
+    margin: 0 auto;
+
+    .footer-nav {
+        width: 80%;
+        margin: 0 auto;
+        padding-top: 85px;
+        padding-bottom: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        h2 {
+            color: $text-200;
+            font-size: $f-s-xxxl;
+            font-weight: $f-w-b;
+        }
+    }
+
+    .footer-menu {
+        display: flex;
+        align-items: center;
+
+        p {
+            margin: 0 10px 0 10px;
+            color: $text-200;
+        }
+
+        a {
+            display: block;
+        }
+
+    }
+
+    small {
+        color: $text-200;
+    }
+
+    .footer-copy {
+        margin: 0 auto;
+        width: 80%;
+        padding-bottom: 50px;
+
+        .footer-flex {
+            display: flex;
+            justify-content: space-between;
+            .footer-icon {
+                display: flex;
+                gap: 15px;
+
+                .btn-line {
+                    // border: 2px solid #ccc;
+                    background-image: url('/images/btn_line.png');
+                    width: 30px;
+                    height: 30px;
+                    background-size: contain; // 保持圖片比例
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    &:hover {
+                        background-image: url('/images/btn_line-hover.png');
+                    }
+                }
+
+                .btn-yt {
+                    // border: 2px solid #ccc;
+                    background-image: url('/images/btn_yt.png');
+                    width: 30px;
+                    height: 30px;
+                    background-size: contain; // 保持圖片比例
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    &:hover {
+                        background-image: url('/images/btn_yt-hover.png');
+                    }
+                }
+
+                .btn-fb {
+                    // border: 2px solid #ccc;
+                    background-image: url('/images/btn_fb.png');
+                    width: 30px;
+                    height: 30px;
+                    background-size: contain; // 保持圖片比例
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    &:hover {
+                        background-image: url('/images/btn_fb-hover.png');
+                    }
+                }
+            }
+        }
+    }
+
+}
