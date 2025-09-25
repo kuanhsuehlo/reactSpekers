@@ -16,6 +16,13 @@
         align-items: center;
         justify-content: space-between;
 
+        @media (max-width:768px) {
+            padding-top: 35px;
+            padding-bottom: 0;
+            width: 100%;
+            flex-direction: column;
+        }
+
         h2 {
             color: $text-200;
             font-size: $f-s-xxxl;
@@ -30,6 +37,10 @@
         p {
             margin: 0 10px 0 10px;
             color: $text-200;
+            @media (max-width:768px) {
+                font-size: 0.75rem;
+                margin-top: 20px;
+            }
         }
 
         a {
@@ -47,12 +58,24 @@
         width: 80%;
         padding-bottom: 50px;
 
+        @media (max-width:768px) {
+            width: 100%;
+        }
+
         .footer-flex {
             display: flex;
             justify-content: space-between;
+            @media (max-width:768px) {
+                margin-top: 30px;
+                justify-content: center;
+            }
+
             .footer-icon {
                 display: flex;
                 gap: 15px;
+                @media (max-width:768px) {
+                    display: none;
+                }
 
                 .btn-line {
                     // border: 2px solid #ccc;
@@ -62,6 +85,7 @@
                     background-size: contain; // 保持圖片比例
                     background-position: center;
                     background-repeat: no-repeat;
+
                     &:hover {
                         background-image: url('/images/btn_line-hover.png');
                     }
@@ -75,6 +99,7 @@
                     background-size: contain; // 保持圖片比例
                     background-position: center;
                     background-repeat: no-repeat;
+
                     &:hover {
                         background-image: url('/images/btn_yt-hover.png');
                     }
@@ -88,6 +113,7 @@
                     background-size: contain; // 保持圖片比例
                     background-position: center;
                     background-repeat: no-repeat;
+
                     &:hover {
                         background-image: url('/images/btn_fb-hover.png');
                     }

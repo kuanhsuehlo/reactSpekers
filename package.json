@@ -8,9 +8,10 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "deploy": "gh-pages -d src"
+    "deploy": "vite build && gh-pages -d dist"
   },
   "dependencies": {
+    "aos": "^2.3.4",
     "gh-pages": "^6.3.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",

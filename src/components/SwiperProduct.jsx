@@ -1,8 +1,14 @@
 import React from 'react'
 import { useEffect, useState } from "react"
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 // import { FaChevronCircleLeft, FaChevronCircleRight } from "react-icons/fa";
 
 const SwiperProduct = () => {
+
+    useEffect(() => {
+        AOS.init();
+      }, []);
 
     // 建立背景圖的變數
     const [currentImgIndex, setCurrentImgIndex] = useState(0);
@@ -59,7 +65,7 @@ const SwiperProduct = () => {
     // }
     return (
         <>
-        <div className='home-product'>
+        <div data-aos="zoom-in" data-aos-duration="1500" className='home-product'>
               <div className='home-circle'>
                 <img src="./images/circle-bg.svg" alt="circle-bg" />
                 <div className='home-web'>
@@ -81,7 +87,7 @@ const SwiperProduct = () => {
                                 width: '10px',
                                 height: '10px',
                                 borderRadius: '50%',
-                                backgroundColor: currentImgIndex === index ? '#007bff' : '#ccc',
+                                backgroundColor: currentImgIndex === index ? '#E23624' : '#ccc',
                                 cursor: 'pointer',
                                 transition: 'all 0.3s ease'
                             }}

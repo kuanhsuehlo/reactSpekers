@@ -4,13 +4,16 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        max-width: 80%;
+        max-width: 100%;
         margin: 20px 0 auto;
         height: 80vh;
+        @media (max-width:768px) {
+            max-width: 80%;
+        }
 
         .home-circle {
             position: relative;
-            max-width: 80%;
+            max-width: 100%;
         }
 
         .home-web {

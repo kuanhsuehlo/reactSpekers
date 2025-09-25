@@ -5,55 +5,302 @@ body {
     font-family: "DM Sans", san-serif;
 }
 
-.nav-container {
-    max-width: 1296px;
-    margin: 0 auto;
+// .nav-container {
+//     max-width: 1500px;
+//     margin: 0 auto;
 
-    .nav-wrap {
-        background-color: $dark;
-        border-radius: 999px;
+//     .nav-wrap {
+//         background-color: $dark;
+//         border-radius: 999px;
 
-        h1 {
-            color: $white;
-            font-size: 2rem;
-            font-weight: 500;
-        }
+//         h1 {
+//             color: $white;
+//             font-size: 2rem;
+//             font-weight: 500;
+//         }
 
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 16px 40px;
-            margin-top: 25px;
+//         .navbar {
+//             display: flex;
+//             justify-content: space-between;
+//             align-items: center;
+//             padding: 16px 40px;
+//             margin-top: 25px;
 
-            .nav-itme {
-                display: flex;
-                margin-left: 20px;
+//             .nav-itme {
+//                 display: flex;
+//                 margin-left: 20px;
 
-                p {
-                    padding: 0 20px;
-                    color: $white;
-                }
-            }
+//                 p {
+//                     padding: 0 20px;
+//                     color: $white;
+//                 }
+//             }
 
-            .nav-end {
-                display: flex;
-                gap: 20px;
-                justify-content: space-between;
-                align-items: center;
-                .nav-notify {
-                    display: flex;
-                }
-                button {
-                    padding: 16px 32px;
-                    color: $white;
-                    font-weight: 700;
-                    background-color: #E23624;
-                    border: none;
-                    border-radius: 999px;
-                    cursor: pointer;
-                }
-            }
-        }
+//             .nav-end {
+//                 display: flex;
+//                 gap: 20px;
+//                 justify-content: space-between;
+//                 align-items: center;
+//                 .nav-notify {
+//                     display: flex;
+//                 }
+//                 button {
+//                     padding: 16px 32px;
+//                     color: $white;
+//                     font-weight: 700;
+//                     background-color: #E23624;
+//                     border: none;
+//                     border-radius: 999px;
+//                     cursor: pointer;
+//                 }
+//             }
+//         }
+//     }
+// }
+
+ .nav-container {
+  max-width: 1500px;
+  margin: 0 auto;
+
+  .nav-wrap {
+    background-color: $dark;
+    border-radius: 999px;
+    position: relative;
+
+    h1 {
+      color: $white;
+      font-size: 2rem;
+      font-weight: 500;
+      margin: 0;
     }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 40px;
+      margin-top: 25px;
+
+      .nav-itme {
+        display: flex;
+        margin-left: 20px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+          margin: 0;
+        }
+
+        p {
+          padding: 0 20px;
+          color: $white;
+          margin: 0;
+        }
+
+        a {
+          text-decoration: none;
+        }
+      }
+
+      .nav-end {
+        display: flex;
+        gap: 20px;
+        justify-content: space-between;
+        align-items: center;
+
+        .nav-notify {
+          display: flex;
+          gap: 10px;
+
+          img {
+            width: 30px;
+            height: 30px;
+          }
+        }
+
+        button {
+          padding: 16px 32px;
+          color: $white;
+          font-weight: 700;
+          background-color: #E23624;
+          border: none;
+          border-radius: 999px;
+          cursor: pointer;
+
+          &:hover {
+            background-color: #c42e1f;
+          }
+        }
+      }
+    }
+
+    // 漢堡選單樣式
+    .hamburger-btn {
+      display: none !important;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 30px;
+      height: 30px;
+      background: transparent !important;
+      border: none;
+      cursor: pointer;
+      padding: 0 !important;
+      margin-left: 15px;
+
+      .hamburger-line {
+        width: 30px;
+        height: 3px;
+        background-color: $white;
+        border-radius: 3px;
+        transition: all 0.3s linear;
+        transform-origin: 1px;
+
+        &.open {
+          &:nth-child(1) {
+            transform: rotate(45deg) ;
+          }
+
+          &:nth-child(2) {
+            opacity: 0;
+            transform: translateX(-20px);
+          }
+
+          &:nth-child(3) {
+            transform: rotate(-45deg) ;
+          }
+        }
+      }
+    }
+
+    // 移動端選單
+    .mobile-nav {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background-color: $dark;
+      border-radius: 20px;
+      padding: 20px;
+      margin-top: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      z-index: 999;
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: all 0.3s ease;
+
+      &.active {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 20px 0;
+
+        li {
+          margin: 10px 0;
+          text-align: center;
+
+          a {
+            text-decoration: none;
+            color: $white;
+            font-size: 18px;
+            display: block;
+            padding: 10px;
+
+            &:hover {
+              background-color: rgba(255, 255, 255, 0.1);
+              border-radius: 8px;
+            }
+
+            p {
+              margin: 0;
+              color: $white;
+            }
+          }
+        }
+      }
+
+      .mobile-actions {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+
+        .mobile-notify {
+          display: flex;
+          gap: 15px;
+        }
+
+        button {
+          padding: 16px 32px;
+          color: $white;
+          font-weight: 700;
+          background-color: #E23624;
+          border: none;
+          border-radius: 999px;
+          cursor: pointer;
+          width: 100%;
+
+          &:hover {
+            background-color: #c42e1f;
+          }
+        }
+      }
+    }
+  }
+
+  // RWD 斷點 992px
+  @media (max-width: 991px) {
+    .nav-wrap {
+      .navbar {
+        .nav-itme {
+          display: none;
+        }
+
+        .nav-end {
+          .nav-notify {
+            display: none;
+          }
+
+          > button:first-of-type {
+            display: none;
+          }
+
+          .hamburger-btn {
+            display: flex !important;
+          }
+        }
+      }
+    }
+  }
+
+  // 小螢幕優化
+  @media (max-width: 768px) {
+    .nav-wrap {
+      .navbar {
+        padding: 16px 25px;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    .nav-wrap {
+      .navbar {
+        padding: 12px 20px;
+      }
+
+      h1 {
+        font-size: 1.6rem;
+      }
+    }
+  }
 }

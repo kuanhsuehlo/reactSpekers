@@ -1,8 +1,10 @@
-// .text-box {
-//      margin-left: 44vw;
-//      margin-top: 42vh;
-// }
 
+.text-box {
+    display: flex;
+    @media (max-width:420px) {
+        justify-content: center;
+    }
+}
 .btn {
     text-transform: uppercase;
     text-decoration: none;
@@ -10,7 +12,7 @@
     display: inline-block;
     border-radius: 100px;
     transition: all .2s;
-    position: absolute;
+    position: relative;
     border: none;
     cursor: pointer;
 }
