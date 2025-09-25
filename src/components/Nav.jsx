@@ -15,9 +15,9 @@ const Nav = () => {
           <div className="nav-wrap">
             <div className="navbar">
               <div>
-                <a href="/">
+                <Link to='/'>
                   <h1>ACOUSTRA</h1>
-                </a>
+                </Link>
               </div>
               <ul className="nav-itme">
                 <li><Link to=''><p>Shop</p></Link></li>
