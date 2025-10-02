@@ -178,10 +178,13 @@ const Home = () => {
             <img src="./images/explore.png" alt="探索產品介紹" />
             <div className='explore-content' data-aos="fade-up" data-aos-anchor-placement="top-bottom">
               <h3>Find your fit</h3>
-              <p>From noise cancellation to full awareness during drills,<br />we have the right earbuds to find your fit.</p>
-              <ButtonPulse>
+              <p>From noise cancellation to full awareness during drills,<br />we have the right earbuds to find your fit.</p>\
+              <div className='btn-box'>
+                <ButtonPulse>
                   <Link className='btn-text' to="">Explore</Link>
                 </ButtonPulse>
+              </div>
+              
             </div>
           </div>
         </div>
